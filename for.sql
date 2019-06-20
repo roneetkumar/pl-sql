@@ -1,0 +1,21 @@
+SET SERVEROUTPUT ON
+SET VERIFY OFF
+
+DECLARE
+V_TOTAL NUMBER := 0;
+V_COUNTER NUMBER := 0;
+
+BEGIN
+    FOR I IN 1..100 LOOP
+        IF MOD(I, 7) = 0 THEN
+            V_TOTAL := I + V_TOTAL;
+            V_COUNTER := V_COUNTER + 1;
+        END IF;    
+    END LOOP;    
+    
+    DBMS_OUTPUT.PUT_LINE('TOTAL = ' || V_TOTAL);
+    DBMS_OUTPUT.PUT_LINE('PERCENTAGE = ' || (V_COUNTER/100));
+-- EXCEPTION
+   
+END;
+/
