@@ -1,0 +1,11 @@
+SET SERVEROUTPUT ON
+SET VERIFY OFF
+    
+BEGIN
+    dbms_output.put_line('Avg Salary : ' || AVG_SALARY(10));
+   
+EXCEPTION
+  WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('ID NOT FOUND');
+END;
+/
